@@ -56,7 +56,7 @@ function reload() {
     document.location.reload()
 }
 
-let mybutton = document.getElementById("scroolUp");
+let mybutton = document.getElementById("scrollUp");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};

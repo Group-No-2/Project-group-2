@@ -63,7 +63,7 @@ ul {
     background-color: #433ca5;
   }
 
-  #scroolUp {
+  #scrollUp {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -79,6 +79,6 @@ ul {
     border-radius: 30px;
   }
   
-  #scroolUp:hover {
+  #scrollUp:hover {
     background-color: #555;
   }
