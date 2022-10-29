@@ -3,7 +3,7 @@ const getData = async () => {
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '67fb182c67msh32674fa495b2f06p17d8e9jsncf1acdd21c21',
-            'X-RapidAPI-Host': 'youtube-music1.p.rapidapi.com'
+            'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
         }
     };
     //Search handler
@@ -15,25 +15,26 @@ const getData = async () => {
     
     try {
     //Fetching data from api
-    res = await fetch(`https://youtube-music1.p.rapidapi.com/v2/search?query=${search}`, options)
+    res = await fetch(`https://spotify81.p.rapidapi.com/search?q=${search}&type=tracks&offset=0&limit=10&numberOfTopResults=5`, options)
     
     data = await res.json()
 
-    songs = data.result.songs
+    songs = data.tracks
 
     document.getElementById('root').innerHTML = ""
-    document.getElementById('result').innerHTML = `${songs.length} results was found (based on api)`
 
     songs.forEach(result => {
+        console.log(result.data.albumOfTrack)
         //Create div element id block
         const block = document.createElement('div')
         block.id = "block"
         //Getting data from api
-        songName = result.name
-        img = result.thumbnail
+        songName = result.data.name
+        img = result.data.albumOfTrack.coverArt.sources[0].url
         //Placing data into element using DOM
-        title = document.createElement('h3')
-        title.innerHTML = songName
+        title = document.createElement('a')
+        title.innerHTML = `<h3>${songName}</h3>`
+        title.href = `https://open.spotify.com/track/${result.data.id}`
         
         thumbnail = document.createElement('img')
         thumbnail.src = img

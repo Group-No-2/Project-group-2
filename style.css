@@ -1,11 +1,11 @@
 #block {
     border-radius: 25px;
-    background: #cc5500;
+    background: #32CD32;
     padding: 20px; 
     width: 500px;
     height: auto;
     margin: 20px;
-    box-shadow: inset 0px 0px 60px 30px #cfb997;
+    box-shadow: inset 0px 0px 80px 20px #FF6347;
 }
 body {
     background-color: rgb(29, 28, 28);
@@ -23,4 +23,14 @@ p {
 }
 h1 {
     text-align: center;
+}
+
+img {
+    width: 30%;
+    height: auto;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
