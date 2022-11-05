@@ -28,19 +28,34 @@ const getData = async () => {
         //Create div element id block
         const block = document.createElement('div')
         block.id = "block"
-        //Getting data from api
+        const detailBlock = document.createElement('div')
+        detailBlock.id = "detailBlock"
+        //Getting data from api2
         songName = result.data.name
         img = result.data.albumOfTrack.coverArt.sources[0].url
+        //songs details
+        detail1 = result.data.albumOfTrack.name
+        detail2 = result.data.artists.items[0].profile.name
+        detail3 = millisToMinutesAndSeconds(result.data.duration.totalMilliseconds)
         //Placing data into element using DOM
         title = document.createElement('a')
         title.innerHTML = `<h3>${songName}</h3>`
         title.href = `https://open.spotify.com/track/${result.data.id}`
         
+        detail = document.createElement('ul')
+        detail.id = "details"
+        detail.innerHTML = `<li>Ablum: ${detail1}</li> <li>Artist: ${detail2}</li> <li>${detail3}</li>`
+
         thumbnail = document.createElement('img')
         thumbnail.src = img
+
+        detailBlock.appendChild(thumbnail)
+        detailBlock.appendChild(detail)
+        
         //append child into block div
         block.appendChild(title)
-        block.appendChild(thumbnail)
+        block.append(detailBlock)
+
         //putting all the block div into root
         document.getElementById('root').appendChild(block)
 
@@ -71,4 +86,10 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+function millisToMinutesAndSeconds(millis) {
+  var minutes = Math.floor(millis / 60000);
+  var seconds = ((millis % 60000) / 1000).toFixed(0);
+  return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
