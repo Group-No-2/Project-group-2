@@ -20,6 +20,7 @@
     <title>Document</title>
   </head>
   <body>
+
     <button onclick="topFunction()" id="scrollUp">↑</button>
 
     <ul>
@@ -27,19 +28,25 @@
       <li><a href="https://open.spotify.com/genre/0JQ5DAqbMKFDXXwE9BDJAr">Rock</a></li>
       <li><a href="https://open.spotify.com/genre/0JQ5DAqbMKFFzDl7qN9Apr">Chill</a></li>
     </ul>
+
     <h1>Spotify music search API</h1>
     <p id="result"></p>
     <p id="error"></p>
 
     <div class="row g-3 d-flex justify-content-center">
-        <div class="col-auto">
-          <input type="input" class="form-control" id="search" placeholder="Search">
-        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mt-3">
+              <div class="input-group">
+                  <input class="form-control py-2 rounded-pill mr-1 pr-5" type="search" id="search" placeholder="Search">
+              </div>
+          </div>
+      </div>
         <div class="col-auto">
           <button class="btn btn-primary mb-3" onclick="getData()">Search</button>
           <button class="btn btn-primary mb-3" onclick="reload()">Reset</button>
         </div>
     </div>
+    
 
     <div id="root"></div>
     
