@@ -44,7 +44,7 @@ const getData = async () => {
         
         detail = document.createElement('ul')
         detail.id = "details"
-        detail.innerHTML = `<li>Ablum: ${detail1}</li> <li>Artist: ${detail2}</li> <li>${detail3}</li>`
+        detail.innerHTML = `<li><strong>Ablum</strong>: ${detail1}</li> <li><strong>Artist</strong>: ${detail2}</li> <li><strong>${detail3}</strong></li>`
 
         thumbnail = document.createElement('img')
         thumbnail.src = img
