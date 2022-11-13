@@ -53,6 +53,34 @@ a {
   float: left;
 }
 
+#nav3 {
+  float: right
+}
+
+#nav3 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#nav4 {
+  float: right
+}
+
+#nav4 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav3 a:hover:not(.active) {
+  background-color: #111;
+}
+
 .nav2 a {
   display: block;
   color: white;

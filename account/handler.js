@@ -43,8 +43,6 @@ function login() {
     var loginPw = document.getElementById('password').value
     if(localStorage.getItem('UsersLogin')) {
         const loginData = JSON.parse(localStorage.getItem('UsersLogin'))
-        console.log(loginUser)
-        console.log(loginPw)
         if (loginData.isLogin === true) return alert("")
         if(loginUser == loginData.username && loginPw == loginData.password) {
             alert("Successfully logined")

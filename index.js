@@ -1,3 +1,5 @@
+isLogin()
+
 const getData = async () => {
     const options = {
         method: 'GET',
@@ -92,4 +94,22 @@ function millisToMinutesAndSeconds(millis) {
   var minutes = Math.floor(millis / 60000);
   var seconds = ((millis % 60000) / 1000).toFixed(0);
   return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+function isLogin() {
+  const userData = JSON.parse(localStorage.getItem('UsersLogin'))
+  if(userData.isLogin == false) {
+    document.getElementById('nav3').innerHTML = `<a href="http://127.0.0.1:5500/account/login.html">Login</a>`
+    document.getElementById('nav4').innerHTML = `<a href="http://127.0.0.1:5500/account/register.html">Register</a>`
+  } else {
+    document.getElementById('nav4').innerHTML = `<a href="#" onclick="logout()">Logout</a>`
+    document.getElementById('nav3').innerHTML = `<a>${userData.username}</a>`
+  }
+}
+
+function logout() {
+  const loginData = JSON.parse(localStorage.getItem('UsersLogin'))
+  loginData.isLogin = false
+  localStorage.setItem("UsersLogin", JSON.stringify(loginData));
+  location.reload()
 }
