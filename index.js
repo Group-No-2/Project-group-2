@@ -76,7 +76,7 @@ function reload() {
 let srollBtn = document.getElementById("scrollUp");
 
 window.onscroll = function() {scrollFunction()};
-
+//show scroll up btn
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     srollBtn.style.display = "block";
@@ -84,18 +84,18 @@ function scrollFunction() {
     srollBtn.style.display = "none";
   }
 }
-
+//scroll up
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
+//Caculate miliseconds to minutes
 function millisToMinutesAndSeconds(millis) {
   var minutes = Math.floor(millis / 60000);
   var seconds = ((millis % 60000) / 1000).toFixed(0);
   return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
-
+//check user is login or not
 function isLogin() {
   const userData = JSON.parse(localStorage.getItem('UsersLogin'))
   if(userData.isLogin == false) {
