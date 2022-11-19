@@ -36,7 +36,7 @@ html {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: rgb(27, 71, 107);
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
@@ -78,7 +78,7 @@ html {
   
   .login-box button:hover {
     background: #116f74;
-    color: #fff;
+    color: rgb(255, 255, 255);
     border-radius: 5px;
     box-shadow: 0 0 5px #116f74,
                 0 0 25px #116f74,
