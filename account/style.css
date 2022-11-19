@@ -165,4 +165,8 @@ html {
       bottom: 100%;
     }
   }
+
+  .loginPage {
+    text-decoration: none;
+  }
   

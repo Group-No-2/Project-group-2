@@ -3,7 +3,7 @@ check()
 var pw = document.getElementById('password').value;
 var repw = document.getElementById('repassword').value
 //store user and password when register
-function store() {
+async function store() {
     var userData = {
         username: document.getElementById('username').value,
         password: document.getElementById('password').value,
@@ -11,13 +11,10 @@ function store() {
     }
 
     if(pw == repw) {
-        window.location.replace("http://127.0.0.1:5500/account/login.html")
         alert("Successfully registered")
         localStorage.setItem('UsersLogin', JSON.stringify(userData));
     } else {
         alert("Please re-enter correct password")
-        console.log(pw)
-        console.log(repw)
     }
 
 }
@@ -40,6 +37,6 @@ function login() {
             localStorage.setItem("UsersLogin", JSON.stringify(loginData));
         } else {
             alert("failed")
-        }   
+        }
     }
 }
